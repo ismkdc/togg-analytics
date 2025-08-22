@@ -4,7 +4,7 @@ Bu proje, TOGG aracı için Docker Compose ile bir örnek yapı sunar.
 Kendi kullanıcı adı, şifre ve şasi numaranızı aşağıdaki alanlara girmeniz gerekiyor.  
 Ayrıca araç adı ekranda görünecek şekilde ayarlanabilir.
 
-## Docker Compose Örneği
+## Docker Compose'da Yapılacak Değişiklikler
 
 ```yaml
  be:
