@@ -7,11 +7,12 @@ Ayrıca araç adı ekranda görünecek şekilde ayarlanabilir.
 ## Docker Compose Örneği
 
 ```yaml
-version: '3.8'
-
-services:
-  app:
-    image: your-app-image:latest
+ be:
+    build:
+      context: ./togg-analytics-be
+      dockerfile: dockerfile
+    depends_on:
+      - postgres
     environment:
       Username: <KULLANICI_ADINIZ>
       Password: <PAROLANIZ>
