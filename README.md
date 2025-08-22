@@ -1,3 +1,7 @@
+
+<img width="1289" height="770" alt="Screenshot 2025-08-22 at 19 34 34-min" src="https://github.com/user-attachments/assets/21b3c57e-59b3-4d11-8b1d-faf9140f112b" />
+<img width="1342" height="906" alt="Screenshot 2025-08-22 at 19 34 56-min" src="https://github.com/user-attachments/assets/75f604c7-7a05-4ba1-adaf-5f92ff9d5793" />
+
 # TOGG Analytics Docker Setup
 
 Bu proje, TOGG aracı için Docker Compose ile bir örnek yapı sunar.  
