@@ -14,14 +14,14 @@ public class RefreshDataBgService(
     TokenService tokenService
 ) : BackgroundService
 {
-    private readonly HttpClient _httpClient = new();
-
-    private string[] _carPhotoUrls =
+    private readonly string[] _carPhotoUrls =
     [
         "https://iili.io/K91vtZQ.jpg",
         "https://iili.io/K91vbnV.jpg",
         "https://iili.io/K91vZwx.jpg"
     ];
+
+    private readonly HttpClient _httpClient = new();
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -173,10 +173,7 @@ public class RefreshDataBgService(
                     Geom = geometryFactory.CreatePoint(new Coordinate(longitude, latitude))
                 };
 
-                if (IsValidCoordinate(latitude, longitude))
-                {
-                    appDbContext.CarTripData.Add(carTripData);
-                }
+                if (IsValidCoordinate(latitude, longitude)) appDbContext.CarTripData.Add(carTripData);
 
                 await appDbContext.SaveChangesAsync(stoppingToken);
             }
@@ -195,9 +192,11 @@ public class RefreshDataBgService(
             }
     }
 
-    bool IsValidCoordinate(double lat, double lon) =>
-        !double.IsNaN(lat) && !double.IsInfinity(lat) &&
-        !double.IsNaN(lon) && !double.IsInfinity(lon) &&
-        lat >= -90 && lat <= 90 &&
-        lon >= -180 && lon <= 180;
+    private bool IsValidCoordinate(double lat, double lon)
+    {
+        return !double.IsNaN(lat) && !double.IsInfinity(lat) &&
+               !double.IsNaN(lon) && !double.IsInfinity(lon) &&
+               lat >= -90 && lat <= 90 &&
+               lon >= -180 && lon <= 180;
+    }
 }
