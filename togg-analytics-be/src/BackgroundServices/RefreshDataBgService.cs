@@ -192,11 +192,11 @@ public class RefreshDataBgService(
             }
     }
 
-    private bool IsValidCoordinate(double lat, double lon)
+    private static bool IsValidCoordinate(double lat, double lon)
     {
         return !double.IsNaN(lat) && !double.IsInfinity(lat) &&
                !double.IsNaN(lon) && !double.IsInfinity(lon) &&
-               lat >= -90 && lat <= 90 &&
-               lon >= -180 && lon <= 180;
+               lat is >= -90 and <= 90 &&
+               lon is >= -180 and <= 180;
     }
 }
